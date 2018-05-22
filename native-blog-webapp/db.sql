@@ -14,8 +14,8 @@ CREATE TABLE articles
   html LONGTEXT NOT NULL,
   content LONGTEXT NOT NULL,
   icon VARCHAR (200) NOT NULL,
-  create_date TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
-  modify_date TIMESTAMP NULL DEFAULT '0000-00-00 00:00:00',
+  create_date TIMESTAMP NOT NULL DEFAULT '1990-01-01 00:00:00',
+  modify_date TIMESTAMP NULL DEFAULT '1990-01-01 00:00:00',
   access_times INT DEFAULT 0,
   comment_times INT DEFAULT 0,
   good_times INT DEFAULT 0,
@@ -38,8 +38,8 @@ CREATE TABLE comments
   visitor_ip char(20) NOT NULL,
   city char(20) NOT NULL,
   article_id INT NOT NULL ,
-  create_date TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
-  modify_date TIMESTAMP NULL DEFAULT '0000-00-00 00:00:00',
+  create_date TIMESTAMP NOT NULL DEFAULT '1990-01-01 00:00:00',
+  modify_date TIMESTAMP NULL DEFAULT '1990-01-01 00:00:00',
   PRIMARY KEY(id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT = 1;
 
@@ -57,7 +57,7 @@ create table access_log (
   id INT NOT NULL AUTO_INCREMENT,
 	visitor_ip char(20) NOT NULL,
 	url VARCHAR (200) NOT NULL,
-	access_date TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+	access_date TIMESTAMP NOT NULL DEFAULT '1990-01-01 00:00:00',
 	city CHAR (20) NOT NULL,
 	params LONGTEXT ,
 	primary key (id)
@@ -81,7 +81,7 @@ create table hero (
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 alter table matches add count int(11) default 1;
-alter table matches add record_date timestamp default '0000-00-00 00:00:00';
+alter table matches add record_date timestamp default '1990-01-01 00:00:00';
 
 alter table articles add status tinyint default 1;
 
@@ -89,8 +89,8 @@ create table html_page (
 	id INT NOT NULL AUTO_INCREMENT,
 	url VARCHAR(500),
 	is_push tinyint,
-	push_date timestamp default '0000-00-00 00:00:00',
-	create_date timestamp default '0000-00-00 00:00:00',
+	push_date timestamp default '1990-01-01 00:00:00',
+	create_date timestamp default '1990-01-01 00:00:00',
 	primary key (id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT = 1;
 
@@ -166,7 +166,7 @@ create table images (
 	primary key (id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT = 1;
 
-ALTER TABLE users add create_date TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00';
+ALTER TABLE users add create_date TIMESTAMP NOT NULL DEFAULT '1990-01-01 00:00:00';
 
 create table dictionaries (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -209,7 +209,7 @@ create table questions (
 	title VARCHAR(200) NOT NULL,
 	description TEXT NOT NULL,
 	username VARCHAR (40),
-  create_date TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+  create_date TIMESTAMP NOT NULL DEFAULT '1990-01-01 00:00:00',
 	primary key (id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT = 1;
 
@@ -220,7 +220,7 @@ create table answers (
 	visitor_ip char(20) NOT NULL,
 	city char(20) NOT NULL,
 	username VARCHAR (40),
-	answer_date TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+	answer_date TIMESTAMP NOT NULL DEFAULT '1990-01-01 00:00:00',
 	reference_answer_id INT,
 	primary key (id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT = 1;
@@ -250,7 +250,7 @@ create table records (
   record TEXT NOT NULL,
 	content VARCHAR(1500),
 	username VARCHAR (40),
-	create_date TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+	create_date TIMESTAMP NOT NULL DEFAULT '1990-01-01 00:00:00',
   access_times INT DEFAULT 0,
   good_times INT DEFAULT 0,
 	primary key (id)
@@ -269,7 +269,7 @@ create table messages (
   visitor_ip char(20) NOT NULL,
   city char(20) NOT NULL,
   username VARCHAR (40),
-  create_date TIMESTAMP NOT NULL DEFAULT '0000-00-00 00:00:00',
+  create_date TIMESTAMP NOT NULL DEFAULT '1990-01-01 00:00:00',
   reference_message_id INT,
   primary key (id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 AUTO_INCREMENT = 1;
